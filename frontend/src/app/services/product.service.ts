@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
-import {catchError} from 'rxjs/operators';
+import {catchError, tap} from 'rxjs/operators';
 import {ProductInfo} from '../models/productInfo';
 import {apiUrl} from 'src/environments/environment';
 
@@ -16,18 +16,23 @@ export class ProductService {
     constructor(private http: HttpClient) {
     }
 
+    getAllCategories(): Observable<any> {
+      const url = `${this.categoryUrl}/all`;
+      return this.http.get(url);
+    }
+
     getAllInPage(page: number, size: number): Observable<any> {
         const url = `${this.productUrl}?page=${page}&size=${size}`;
         return this.http.get(url)
             .pipe(
-                // tap(_ => console.log(_)),
+                tap(data => console.log('getAllInPage', data)),
             );
     }
 
     getCategoryInPage(categoryType: number, page: number, size: number): Observable<any> {
         const url = `${this.categoryUrl}/${categoryType}?page=${page}&size=${size}`;
         return this.http.get(url).pipe(
-            // tap(data => console.log(data))
+            tap(data => console.log('data.category', data))
         );
     }
 
@@ -52,7 +57,7 @@ export class ProductService {
     }
 
 
-    delelte(productInfo: ProductInfo): Observable<any> {
+    delete(productInfo: ProductInfo): Observable<any> {
         const url = `${apiUrl}/seller/product/${productInfo.productId}/delete`;
         return this.http.delete(url);
     }

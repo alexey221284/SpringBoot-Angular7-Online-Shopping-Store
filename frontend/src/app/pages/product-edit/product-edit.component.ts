@@ -1,7 +1,9 @@
 import {AfterContentChecked, Component, OnInit} from '@angular/core';
-import {ProductInfo} from "../../models/productInfo";
-import {ProductService} from "../../services/product.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ProductInfo} from '../../models/productInfo';
+import {ProductService} from '../../services/product.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Observable} from 'rxjs';
+import {Categories} from 'src/app/models';
 
 @Component({
     selector: 'app-product-edit',
@@ -11,10 +13,15 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class ProductEditComponent implements OnInit, AfterContentChecked {
 
     product = new ProductInfo();
+    options$: Observable<Categories>;
 
-    constructor(private productService: ProductService,
-                private route: ActivatedRoute,
-                private router: Router) {
+    constructor(
+      private productService: ProductService,
+      private route: ActivatedRoute,
+      private router: Router
+    ) {
+      this.options$ = this.getOptions();
+      console.log(this.options$);
     }
 
     productId: string;
@@ -58,5 +65,9 @@ export class ProductEditComponent implements OnInit, AfterContentChecked {
 
     ngAfterContentChecked(): void {
         console.log(this.product);
+    }
+
+    getOptions(): Observable<Categories> {
+      return this.productService.getAllCategories();
     }
 }

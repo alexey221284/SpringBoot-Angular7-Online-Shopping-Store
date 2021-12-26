@@ -10,10 +10,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
 
     <div class="navbar-nav" *ngIf="!currentUser || currentUser.role == Role.Customer">
-      <a class="nav-item nav-link" routerLink="/category/0">Ремешки</a>
-      <a class="nav-item nav-link" routerLink="/category/1">Браслеты</a>
-      <a class="nav-item nav-link" routerLink="/category/2">Чехлы</a>
-      <a class="nav-item nav-link" routerLink="/category/3">Бронистекла</a>
+      <a *ngFor="let category of categories$ | async" class="nav-item nav-link" routerLink="/category/{{category.categoryType}}">{{category.categoryName}}</a>
     </div>
 
     <div class="navbar-nav ml-auto">

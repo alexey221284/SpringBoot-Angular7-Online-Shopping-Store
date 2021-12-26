@@ -40,4 +40,19 @@
         </div>
     </form>
 
+  <strong>Быстрый вход для разных ролей в режиме разработки:</strong>
+  <table style="width: 100%;" id="sampleLoginTable">
+    <tr>
+      <td><a
+        (click)="fillLoginFields('customer1@email.com','123')"
+        href="javascript:void(0)">Клиент</a></td>
+      <td><a
+        (click)="fillLoginFields('employee1@email.com','123')"
+        href="javascript:void(0)">Сотрудник</a></td>
+      <td><a
+        (click)="fillLoginFields('manager1@email.com','123')"
+        href="javascript:void(0)">Управляющий</a></td>
+    </tr>
+  </table>
+
 </div>
