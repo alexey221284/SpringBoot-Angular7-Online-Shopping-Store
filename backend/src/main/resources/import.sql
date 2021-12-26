@@ -22,6 +22,7 @@ INSERT INTO "public"."product_category" VALUES (2147483641, 'Books', 0, '2018-03
 INSERT INTO "public"."product_category" VALUES (2147483642, 'Clothes', 2, '2018-03-10 00:15:02', '2018-03-10 00:15:21');
 INSERT INTO "public"."product_category" VALUES (2147483644, 'Drink', 3, '2018-03-10 01:01:09', '2018-03-10 01:01:09');
 INSERT INTO "public"."product_category" VALUES (2147483645, 'Food', 1, '2018-03-10 00:26:05', '2018-03-10 00:26:05');
+INSERT INTO "public"."product_category" VALUES (2147483646, 'Watchbands', 4, '2021-12-26 00:00:00', '2021-12-26 00:00:00');
 
 
 -- ----------------------------
