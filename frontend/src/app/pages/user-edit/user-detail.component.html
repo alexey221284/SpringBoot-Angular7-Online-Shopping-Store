@@ -1,14 +1,14 @@
-<h1 align="center" class="display-4 mb-5">Edit Profiles</h1>
+<h1 align="center" class="display-4 mb-5">Редактирование профиля</h1>
 <div style="width:40%; margin: 25px auto" >
   <form #form="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label><b>Email address</b></label>
+      <label><b>Email</b></label>
         <input readonly [value]=user?.email type="email" class="form-control form-control-lg " disabled id="email"
-               name="email" placeholder="Enter email">
+               name="email" placeholder="Введите email">
     </div>
     <div class="form-group">
-      <label><b>Name</b></label>
-      <input [(ngModel)]="user.name" type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Your name" required #name="ngModel" autofocus>
+      <label><b>Имя</b></label>
+      <input [(ngModel)]="user.name" type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Ваше имя" required #name="ngModel" autofocus>
       <div  *ngIf="name.invalid && (name.dirty || name.touched)">
         <div *ngIf="name.errors.required">
           Имя обязательно.
@@ -19,8 +19,8 @@
       </div>
     </div>
     <div class="form-group">
-      <label><b>Password</b></label>
-      <input  [(ngModel)]="user.password" type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Password" minlength="3" required #password="ngModel">
+      <label><b>Пароль</b></label>
+      <input  [(ngModel)]="user.password" type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Пароль" minlength="3" required #password="ngModel">
       <div  *ngIf="password.invalid && (password.dirty ||password.touched)">
         <div *ngIf="password.errors.required">
           Пароль обязателен.
@@ -31,8 +31,8 @@
       </div>
     </div>
     <div class="form-group">
-      <label><b>Phone</b></label>
-      <input [(ngModel)]="user.phone" type="text" class="form-control form-control-lg" id="phone" name="phone" placeholder="Phone" required #phone="ngModel" >
+      <label><b>Телефон</b></label>
+      <input [(ngModel)]="user.phone" type="text" class="form-control form-control-lg" id="phone" name="phone" placeholder="Телефон" required #phone="ngModel" >
       <div  *ngIf="phone.invalid && (phone.dirty ||phone.touched)">
         <div *ngIf="phone.errors.required">
           Номер телефона обязателен.
@@ -40,8 +40,8 @@
       </div>
     </div>
     <div class="form-group">
-      <label><b>Address</b></label>
-      <input [(ngModel)]="user.address" type="text" class="form-control form-control-lg" id="address" name="address" placeholder="Address" required #address="ngModel">
+      <label><b>Адрес</b></label>
+      <input [(ngModel)]="user.address" type="text" class="form-control form-control-lg" id="address" name="address" placeholder="Адрес" required #address="ngModel">
       <div  *ngIf="address.invalid && (address.dirty ||address.touched)">
         <div *ngIf="address.errors.required">
           Адрес обязателен.
