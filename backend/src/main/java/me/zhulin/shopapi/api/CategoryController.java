@@ -11,6 +11,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Created By Zhu Lin on 3/10/2018.
  */
@@ -42,5 +44,11 @@ public class CategoryController {
         var tmp = new CategoryPage("", productInCategory);
         tmp.setCategory(cat.getCategoryName());
         return tmp;
+    }
+
+    @GetMapping("/category/all")
+    public List<ProductCategory> showAll() {
+        List<ProductCategory> all = categoryService.findAll();
+        return all;
     }
 }
