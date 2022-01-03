@@ -13,6 +13,7 @@ import org.junit.runners.Suite;
         ProductServiceImplTest.class,
         UserServiceImplTest.class
 })
+
 public class ShopApiApplicationTests {
 
 }
