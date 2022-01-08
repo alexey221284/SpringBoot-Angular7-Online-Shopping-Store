@@ -1,0 +1,6 @@
+@import "../../shared/buttons.css";
+
+.button {
+  float: right;
+  margin-right: 30px;
+}
