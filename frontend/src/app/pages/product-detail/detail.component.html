@@ -33,10 +33,10 @@
             </p>
           </div>
           <button type="submit" [disabled]="!form.form.valid" *ngIf="productInfo?.productStatus == 0; else offBlock"
-                  class="btn btn-primary btn-lg"
+                  class="button"
           >Добавить в корзину
           </button>
-          <ng-template #offBlock><a class="btn btn-secondary btn-lg disabled">Товар недоступен</a></ng-template>
+          <ng-template #offBlock><a class="button disabled">Товар недоступен</a></ng-template>
         </form>
 
       </div>

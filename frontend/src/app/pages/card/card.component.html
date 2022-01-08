@@ -12,9 +12,9 @@
         </div>
         <br>
         <a routerLink="/product/{{productInfo.productId}}" *ngIf="productInfo.productStatus == 0; else offBlock"
-           class="btn btn-primary btn-lg"
+           class="button"
         >Купить</a>
-        <ng-template #offBlock><a class="btn btn-secondary btn-lg disabled">Товар недоступен</a></ng-template>
+        <ng-template #offBlock><a class="button disabled">Товар недоступен</a></ng-template>
       </div>
     </div>
   </div>

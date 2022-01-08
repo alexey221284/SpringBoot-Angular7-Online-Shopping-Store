@@ -49,7 +49,7 @@
 
 <div *ngIf="productInOrders?.length > 0; else empty">
     <h5 style="display: inline;">Total: {{total | currency}}</h5>
-    <button (click)="checkout()" class="btn btn-warning float-right">Заказать</button>
+    <button (click)="checkout()" class="button">Заказать</button>
 </div>
 <ng-template #empty>
     <h4 class="text-muted text-center">Корзина пуста</h4>
